@@ -1,0 +1,10 @@
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Number</mat-label>
+    <input matInput  type="number">
+    <mat-error *ngIf="formControl.invalid">
+      {{ getErrorMessage() }}
+    </mat-error>
+  </mat-form-field> -->
+
+  <input type="number" [formControl]="formControl"  [required]="required">
+  

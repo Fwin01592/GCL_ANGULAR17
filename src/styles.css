@@ -1,0 +1,128 @@
+html{
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
+  .login-box {
+    position: absolute;
+    left: 10%;
+    margin-top: 5%;
+    width: 80%;
+    padding: 40px;
+    /* transform: translate(-50%, 10%); */
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box header {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    color: #4d4d4c;
+    
+  }
+  
+  /* .login-box h4 {
+    margin-bottom: 20px;
+    color: #fca709;
+    text-align: center;
+  } */
+  
+  /* .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;   
+     flex-direction: column;
+  }
+  
+  .field-container {
+    display: flex;
+    flex-direction: column;
+  } */
+  .radio{
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent; 
+  }
+  
+  .mat-form-field {
+    width: 100%;
+  }
+  
+  /* .login-box button {
+    width: 100%;
+    padding: 10px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #03e9f4;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+  } */
+  
+  .user-box input, .user-box textarea, .user-box select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #e66f13;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px dashed #999;
+    outline: none;
+    background: transparent;
+  }
+  
+  .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #e66f13;
+    /* pointer-events: none; */
+    transition: .5s;
+  }
+  
+  .user-box input:focus ~ label, 
+  .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+
+  
+  .mat-accordion .mat-expansion-panel {
+    margin-bottom: 16px; /* Space between each panel */
+    margin-top: 16px; /* Space between each panel */
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
+  

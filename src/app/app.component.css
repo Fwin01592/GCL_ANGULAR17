@@ -1,0 +1,20 @@
+.staticBox{
+    max-width: 1000px;
+    padding: 0 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+.imageSpan{
+    display: inline-block;
+    padding-left: 150px;
+    float: right;
+}
+.ifl-left-section{
+    float: left;
+    padding: 15px 0;
+    position: relative;
+    z-index: 1;
+}
+h5{
+    color: #e66f13;
+}

@@ -1,0 +1,11 @@
+<!-- <input type="file" [formControl]="formControl"  [placeholder]="placeholder" [required]="required" (onchange)="getFileDetails($event)" value="value"> -->
+<div>
+    <input
+      type="file"
+      [formControl]="formControl"
+      [placeholder]="placeholder"
+      [required]="required"
+      [value]="value"
+      (change)="handleFileInput($event)"
+    />
+  </div>

@@ -1,0 +1,16 @@
+   <div>
+    <ng-container *ngIf="showAsToggle; else checkboxTemplate">
+      <label class="toggle-switch">
+        <input type="checkbox" [formControl]="formControl" (change)="onToggle()" [value]="false">
+        <span class="slider">
+          <span class="on-label">Yes</span>
+          <span class="off-label">No</span>
+        </span>
+      </label>
+
+    </ng-container>
+    <ng-template #checkboxTemplate>
+      <input type="checkbox" [formControl]="formControl" [placeholder]="placeholder" [disabled]="readOnly">
+    </ng-template>
+  </div>
+  

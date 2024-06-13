@@ -1,0 +1,15 @@
+<!-- <mat-form-field>
+    <mat-select>
+      <mat-option *ngFor="let option of options" value="option.value">
+        {{option.key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+  <select [formControl]="formControl" (change)="onSelect($event)" [required]="required">
+    <option *ngFor="let option of options" [value]="option.value">{{ option.key }}</option>
+  </select>
+  
+  
+  
+  

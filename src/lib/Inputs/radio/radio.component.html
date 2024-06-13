@@ -1,0 +1,25 @@
+<!-- <mat-radio-group>
+    <span *ngFor="let option of options">
+        <mat-radio-button value="option.value">{{option.key}}</mat-radio-button>
+    </span>  
+</mat-radio-group> -->
+<!-- <span *ngFor="let option of options">
+    <input type="radio" value="option.value" click="onSelect($event)">{{option.key}}
+ </span>  -->
+
+ <div class="radio-group">
+    
+    <label *ngFor="let option of options">
+      <input [formControl]="formControl" 
+        type="radio"
+        [value]="option.value"
+        [checked]="value === option.key"
+        (change)="onSelect(option.value)"
+        [required]="required"
+      />
+      {{ option.key }}
+    </label>
+    <button type="button" (click)="clearSelection()">Clear</button>
+  </div>
+  
+  

@@ -1,0 +1,87 @@
+/* The toggle switch container */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 14px;
+  }
+  
+  /* Hide the default checkbox */
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  /* The slider before state */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  /* Toggle switch checked state */
+  .toggle-switch input:checked + .slider {
+    background-color: #e66f13;
+  }
+  
+  /* Toggle switch slider position when checked */
+  .toggle-switch input:checked + .slider::before{
+    transform: translateX(26px);
+  }
+  
+  /* Disabled state */
+  .toggle-switch input:disabled + .slider {
+    background-color: #e6e6e6;
+    cursor: not-allowed;
+  }
+  
+  /* Labels inside the slider */
+  .on-label, .off-label {
+    position: absolute;
+    width: 50%;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    line-height: 34px;
+    transition: .4s;
+  }
+  
+  .on-label {
+    left: 0;
+    opacity: 0;
+  }
+  
+  .off-label {
+    right: 0;
+    opacity: 1;
+  }
+  
+  .toggle-switch input:checked + .slider .on-label {
+    opacity: 1;
+  }
+  
+  .toggle-switch input:checked + .slider .off-label {
+    opacity: 0;
+  }
+
+  

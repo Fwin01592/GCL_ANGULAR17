@@ -1,0 +1,19 @@
+::ng-deep .mat-grid-tile-content {
+  display: flow !important;
+  margin-right: 2rem !important;
+  }
+
+  ::ng-deep .mat-grid-tile-footer{
+    height:1rem !important;
+    color: red !important;
+    background: transparent !important;
+    padding: 0px !important;
+  }
+  .required:after {
+    content:" *";
+    color: red;
+  }
+  label{
+    font-size:small;
+  }
+ 

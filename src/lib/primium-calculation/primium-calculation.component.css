@@ -1,0 +1,16 @@
+mat-panel-title{
+    color:  #e66f13;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    line-height: 1.2;
+    font-size: 16px ;
+    font-weight: 600;
+    font-family: sans-serif
+}
+h2{
+    color: #003869;
+    font-size: 1.2em;
+    font-family: "Whitney-Book", Arial;
+    text-transform: uppercase;
+    line-height: 1;
+}

@@ -1,0 +1,32 @@
+.flex-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    margin: 1rem;
+  }
+   
+  .text-column {
+    flex: 1;
+    padding-right: 10px; /* Optional: Add some spacing between columns */
+  }
+   
+  .checkbox-column {
+    flex-shrink: 0; /* Prevent checkbox column from shrinking */
+    width: 50px; /* Adjust the width as needed */
+  }
+
+  mat-panel-title{
+    color:  #e66f13;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    line-height: 1.2;
+    font-size: 16px ;
+    font-weight: 600;
+    font-family: sans-serif
+}
+h2{
+    color: #003869;
+    font-size: 1.2em;
+    font-family: "Whitney-Book", Arial;
+    text-transform: uppercase;
+    line-height: 1;
+}
