@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-medical-history',
@@ -10,6 +11,7 @@ export class MedicalHistoryComponent {
 
   formGroup: FormGroup;
   title = 'base';
+  @Output() formSubmit = new EventEmitter<void>();
   schema={
     medicalQue: [
       { name: 'heightInFeet', label: 'Height in feet', type: 'text', required: true },
@@ -58,7 +60,7 @@ export class MedicalHistoryComponent {
     {que:`Have you been vaccinated?`,dValue:false}
   ]
   panelState: boolean[] = [true, false, false];
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router:Router) {
     this.formGroup = this.fb.group({});
   }
   
@@ -89,12 +91,16 @@ export class MedicalHistoryComponent {
     return this.formGroup.controls[name] as FormControl;
   }
   onSubmit(){
+   if (this.formGroup.valid) {
     console.log('Form Submitted', this.formGroup.value);
+    this.router.navigate(['/consentDetails']);
+    this.formSubmit.emit();
+    } else {
+    this.formGroup.markAllAsTouched();
+  }
   }
   onPanelChange(panelIndex: number) {
-    // this.panelState = [false, false, false];
     if (!this.panelState[panelIndex]) {
-      // If the panel is closed, open the next one
       if (panelIndex < this.panelState.length - 1) {
         this.panelState[panelIndex + 1] = true;
       }

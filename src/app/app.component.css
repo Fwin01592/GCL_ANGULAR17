@@ -18,3 +18,14 @@
 h5{
     color: #e66f13;
 }
+::ng-deep.mat-horizontal-stepper-header-container{
+    width:40% !important;
+    margin-left: 30% !important;
+    margin-bottom: -4rem !important;
+    height: 3rem !important;
+    font-size:small !important
+}
+::ng-deep .mat-step-text-label{
+    font-size:smaller !important
+
+}

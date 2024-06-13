@@ -1,50 +1,50 @@
 <mat-card class="login-box">
-    <h2>PREMIUM CALCULATION</h2>
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-      <mat-accordion>
-        <mat-expansion-panel [(expanded)]="panelState[0]" (expandedChange)="onPanelChange(0)">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              CHANNEL DETAILS
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div>
-            <app-field [schema]="schema.channelDetailSchema" [formGroup]="formGroup" ></app-field>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-      <mat-accordion>
-        <mat-expansion-panel [(expanded)]="panelState[1]" (expandedChange)="onPanelChange(1)">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              PERSONAL DETAILS FOR LIFE ASSURED
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div>
-            <app-field [schema]="schema.personalDetail" [formGroup]="formGroup"></app-field>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-      <mat-accordion>
-        <mat-expansion-panel [(expanded)]="panelState[2]" (expandedChange)="onPanelChange(2)">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              PLAN SECTION
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div>
-            <app-field [schema]="schema.planDetail" [formGroup]="formGroup" ></app-field>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
+  <h2>PREMIUM CALCULATION</h2>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <mat-accordion>
+      <mat-expansion-panel [(expanded)]="panelState[0]" (expandedChange)="onPanelChange(0)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            CHANNEL DETAILS
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <app-field [schema]="schema.channelDetailSchema" [formGroup]="formGroup" ></app-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel [(expanded)]="panelState[1]" (expandedChange)="onPanelChange(1)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            PERSONAL DETAILS FOR LIFE ASSURED
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <app-field [schema]="schema.personalDetail" [formGroup]="formGroup"></app-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel [(expanded)]="panelState[2]" (expandedChange)="onPanelChange(2)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            PLAN SECTION
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <app-field [schema]="schema.planDetail" [formGroup]="formGroup" ></app-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-      <!-- <button mat-raised-button type="submit">Submit</button> -->
-      <!-- <a routerLink="/medicalHistory"  mat-raised-button (click)="onSubmit()"> Submit</a> -->
-      <a mat-raised-button (click)="onSubmit()"> Submit</a>
+    <!-- <button mat-raised-button type="submit">Submit</button> -->
+    <!-- <a routerLink="/medicalHistory"  mat-raised-button (click)="onSubmit()"> Submit</a> -->
+    <a mat-raised-button (click)="onSubmit()" style="margin-left: 45%; margin-top: 3rem;"> Submit</a>
 
-    </form>
+  </form>
 </mat-card>
-    
   
+
 
 

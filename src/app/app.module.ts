@@ -34,6 +34,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MedicalHistoryComponent } from '../lib/medical-history/medical-history.component';
 import { ConsentDetailsComponent } from '../lib/consent-details/consent-details.component';
 import { FileComponent } from '../lib/Inputs/file/file.component';
+import { MatStepperModule } from '@angular/material/stepper';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +73,7 @@ import { FileComponent } from '../lib/Inputs/file/file.component';
     // MatNativeDateModule,
     ReactiveFormsModule,
     // MatRadioModule,
+    MatStepperModule ,
     MatCardModule,
     MatGridListModule,
     AppRoutingModule

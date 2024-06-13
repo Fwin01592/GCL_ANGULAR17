@@ -1,65 +1,65 @@
 <mat-card class="login-box">
-    <h2>HEALTH DETAILS</h2>
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-      <mat-accordion>
-        <mat-expansion-panel [(expanded)]="panelState[0]" (expandedChange)="onPanelChange(0)">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                MEDICAL QUESTIONS FOR MEMBERS
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div>
-            <app-field [schema]="schema.medicalQue" [formGroup]="formGroup" ></app-field>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-      <mat-accordion>
-        <mat-expansion-panel [(expanded)]="panelState[1]" (expandedChange)="onPanelChange(1)">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                FAMILY MEDICAL HISTORY
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-      
-          <div *ngFor="let que of familyQuestionList;let i = index">
-            <div class="flex-container">
-                <div class="text-column">
-                  <b>{{i+1}}. </b> {{que}}
-                </div>
-                <div class="checkbox-column">
-                        <app-field type="checkbox" [showAsToggle]="true" name="fque{{i+1}}" value="true"  [formGroup]="formGroup"></app-field>
-                </div>
-            </div>
-          </div>
-         
-        </mat-expansion-panel>
-      </mat-accordion>
-      <mat-accordion>
-        <mat-expansion-panel [(expanded)]="panelState[2]" (expandedChange)="onPanelChange(2)">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                COVID -19 QUESTIONNAIRE
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div *ngFor="let que of covidQueList;let i = index">
-            <div class="flex-container">
-                <div class="text-column">
-                  <b>{{i+1}}. </b> <span [innerHTML]="que.que"></span>
-                </div>
-                <div class="checkbox-column">
-                    <app-field type="checkbox" [showAsToggle]="true" name="cque{{i+1}}" [value]="que.dValue"  [formGroup]="formGroup" ></app-field>
-                </div>
-            </div>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
-      
-
-      <!-- <button mat-raised-button type="submit" >Submit</button> -->
-      <a routerLink="/consentDetails" mat-raised-button (click)="onSubmit()"> Submit</a>
-    </form>
-</mat-card>
+  <h2>HEALTH DETAILS</h2>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <mat-accordion>
+      <mat-expansion-panel [(expanded)]="panelState[0]" (expandedChange)="onPanelChange(0)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              MEDICAL QUESTIONS FOR MEMBERS
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <app-field [schema]="schema.medicalQue" [formGroup]="formGroup" ></app-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel [(expanded)]="panelState[1]" (expandedChange)="onPanelChange(1)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              FAMILY MEDICAL HISTORY
+          </mat-panel-title>
+        </mat-expansion-panel-header>
     
+        <div *ngFor="let que of familyQuestionList;let i = index">
+          <div class="flex-container">
+              <div class="text-column">
+                <b>{{i+1}}. </b> {{que}}
+              </div>
+              <div class="checkbox-column">
+                      <app-field type="checkbox" [showAsToggle]="true" name="fque{{i+1}}" value="true"  [formGroup]="formGroup"></app-field>
+              </div>
+          </div>
+        </div>
+       
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      <mat-expansion-panel [(expanded)]="panelState[2]" (expandedChange)="onPanelChange(2)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              COVID -19 QUESTIONNAIRE
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let que of covidQueList;let i = index">
+          <div class="flex-container">
+              <div class="text-column">
+                <b>{{i+1}}. </b> <span [innerHTML]="que.que"></span>
+              </div>
+              <div class="checkbox-column">
+                  <app-field type="checkbox" [showAsToggle]="true" name="cque{{i+1}}" [value]="que.dValue"  [formGroup]="formGroup" ></app-field>
+              </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+
+    <!-- <button mat-raised-button type="submit" >Submit</button> -->
+    <a  mat-raised-button (click)="onSubmit()"  style="margin-left: 45%; margin-top: 3rem;"> Submit</a>
+  </form>
+</mat-card>
   
+
 
 

@@ -1,63 +1,29 @@
-<!-- <!-- <div  class="login-box">
-  <header>schema</header>
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <h4>Schema</h4>
-    <app-field [schema]="schema"  [formGroup]="formGroup"></app-field>
-    <button type="submit">Submit</button>
-  </form>
-  </div>
-<div>
-  <header>Fields</header>
-  <form  [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <h4>Text</h4>
-     <app-field type="text" label="TEXT 1" [required]="true" name="text1" [formControl]="getControl('text1')"></app-field>
-   <h4>Number</h4>
-   <app-field type="number"  name="number" label="Number" [formControl]="getControl('number')"></app-field>
-    <h4>email</h4>
-   <app-field type="email" name="email" label="Email" ></app-field>
-    <h4>phone</h4>
-   <app-field type="phone" name="phone1" label="phone1" [required]="true"  ></app-field>
-    <h4>date</h4>
-   <app-field type="date" name="date" label="date"></app-field>
-    <h4>password</h4>
-   <app-field type="password" name="password" label="Password" ></app-field>
-    <h4>url</h4>
-   <app-field type="url" name="url" label="Url"></app-field>
-    <h4>checkbox</h4>
-   <app-field type="checkbox" name="checkbox" label="Checkbox" ></app-field>
-    <h4>radio</h4>
-   <app-field type="radio" name="radio" label="radio"></app-field>
-    <h4>button</h4>
-   <app-field type="button" name="button" label="Button"></app-field>
-  
-   <button type="submit">Submit</button>
-  </form>
-</div> 
+<div style="display: grid;">
+  <div class="staticBox">
+    <span class="imageSpan">
+      <div class="ifl-left-section">
+        <img src="../assets/BOB-Logo.jpg" style="height: 5rem;">
+        <h5>WELCOME: RAJESH PATRA</h5>
+      </div>
+    </span>
+   </div>
+   <!-- <router-outlet></router-outlet> -->
+   <div>
+    <mat-horizontal-stepper [linear]="true" #stepper>
+      <mat-step>
+        <ng-template matStepLabel>Primium Calculation </ng-template>
+        <app-primium-calculation (formSubmit)="stepper.next()"></app-primium-calculation>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Medical History</ng-template>
+        <app-medical-history (formSubmit)="stepper.next()"></app-medical-history>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Consent</ng-template>
+        <app-consent-details ></app-consent-details>
+      </mat-step>
+    </mat-horizontal-stepper>
+   </div>
+</div>
 
-<mat-card class="login-box">
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-      <h4>Schema</h4>
-      <div>
-        <app-field [schema]="schema" [formGroup]="formGroup" [getErrorMessage]="getErrorMessage.bind(this)"></app-field>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
-</mat-card>
-    <header>schema</header>
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-      <h4>Schema</h4>
-      <div class="grid-container">
-        <app-field [schema]="schema" [formGroup]="formGroup"></app-field>
-      </div>
-      <button type="submit">Submit</button>
-    </form> 
- -->
- <div class="staticBox">
-  <span class="imageSpan">
-    <div class="ifl-left-section">
-      <img src="../assets/BOB-Logo.jpg" style="height: 5rem;">
-      <h5>WELCOME: RAJESH PATRA</h5>
-    </div>
-  </span>
- </div>
- <router-outlet></router-outlet>
+

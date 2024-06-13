@@ -1,33 +1,33 @@
 <mat-card class="login-box">
-    <h2>CONSENT DETAILS</h2>
-    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-      <!-- <mat-accordion>
-        <mat-expansion-panel [expanded]="true">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              CHANNEL DETAILS
-            </mat-panel-title>
-          </mat-expansion-panel-header> -->
-          <div class="flex-container">
-            <div>
-              <app-field name="consentConfirmationby" label="Consent Confirmation by" require=true [formGroup]="formGroup" [value]="'uploadMembershipForm'" type="select" [options]="options"></app-field>
-            </div>
-            <div *ngIf="formGroup.value.consentConfirmationby =='uploadMembershipForm'" class="doc-column">
-              <app-field name="docUpload" type="file" require=true [formGroup]="formGroup"></app-field>
-            </div>
-            <div *ngIf="formGroup.value.consentConfirmationby =='smartLinkForOTP'" class="button-column">
-              <button mat-raised-button (click)="onSubmit()"> Send Smart Link</button>
-            </div>
-        </div>
-        <!-- </mat-expansion-panel>
-      </mat-accordion> -->
+  <h2>CONSENT DETAILS</h2>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <!-- <mat-accordion>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            CHANNEL DETAILS
+          </mat-panel-title>
+        </mat-expansion-panel-header> -->
+        <div class="flex-container">
+          <div>
+            <app-field name="consentConfirmationby" label="Consent Confirmation by" require=true [formGroup]="formGroup" [value]="'uploadMembershipForm'" type="select" [options]="options"></app-field>
+          </div>
+          <div *ngIf="formGroup.value.consentConfirmationby =='uploadMembershipForm'" class="doc-column">
+            <app-field name="docUpload" type="file" require=true [formGroup]="formGroup"></app-field>
+          </div>
+          <div *ngIf="formGroup.value.consentConfirmationby =='smartLinkForOTP'" class="button-column">
+            <button mat-raised-button (click)="onSubmit()"> Send Smart Link</button>
+          </div>
+      </div>
+      <!-- </mat-expansion-panel>
+    </mat-accordion> -->
 
-      <!-- <button mat-raised-button type="submit">Submit</button> -->
-      <a  *ngIf="formGroup.value.consentConfirmationby =='uploadMembershipForm'" mat-raised-button (click)="onSubmit()"> Upload</a>
+    <!-- <button mat-raised-button type="submit">Submit</button> -->
+    <a  *ngIf="formGroup.value.consentConfirmationby =='uploadMembershipForm'" mat-raised-button (click)="onSubmit()"  style="margin-left:45%; margin-top: 3rem;"> Upload</a>
 
-    </form>
+  </form>
 </mat-card>
-    
   
+
 
 
