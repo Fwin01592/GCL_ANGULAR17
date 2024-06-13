@@ -1,0 +1,28 @@
+.table-container {
+    overflow-x: auto;
+    width: 100vw;
+    /* margin-top: 5rem ; */
+    /* height: 1vh; */
+  }
+  
+h2{
+    color: #003869;
+    font-size: 1.2em;
+    font-family: "Whitney-Book", Arial;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.searchBox{
+    float: right;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px dashed #999;
+    outline: none;
+    background: transparent;
+    color: #e66f13;
+}
+button{
+    background: transparent;
+    outline: none;
+    border: none;
+}

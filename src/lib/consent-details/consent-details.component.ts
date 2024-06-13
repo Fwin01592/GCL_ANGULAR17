@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
@@ -8,6 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrl: './consent-details.component.css'
 })
 export class ConsentDetailsComponent {
+  @Output() formSubmit = new EventEmitter<void>();
   formGroup: FormGroup;
   title = 'consentDetails';
   // schema=  [
@@ -42,10 +43,8 @@ export class ConsentDetailsComponent {
         this.formGroup.value[key]= this.formGroup.get(key)?.value;
       });
       console.log('Form Submitted', this.formGroup.value);
-
-
+      this.formSubmit.emit();
   }
-
 
   createFormGroup(schema: any[]): void {
     schema.forEach(field => {
@@ -63,6 +62,5 @@ export class ConsentDetailsComponent {
     this.addFormControl(name);
     return this.formGroup.controls[name] as FormControl;
   }
-
 
 }

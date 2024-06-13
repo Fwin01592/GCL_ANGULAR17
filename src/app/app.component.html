@@ -7,8 +7,8 @@
       </div>
     </span>
    </div>
-   <!-- <router-outlet></router-outlet> -->
-   <div>
+  
+   <div class="staticStepper">
     <mat-horizontal-stepper [linear]="true" #stepper>
       <mat-step>
         <ng-template matStepLabel>Primium Calculation </ng-template>
@@ -20,10 +20,15 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Consent</ng-template>
-        <app-consent-details ></app-consent-details>
+        <app-consent-details (formSubmit)="stepper.next()"></app-consent-details>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Dashboard</ng-template>
+        <app-dashboard [data]="dashboardDetailsList"></app-dashboard>
       </mat-step>
     </mat-horizontal-stepper>
    </div>
 </div>
+
 
 

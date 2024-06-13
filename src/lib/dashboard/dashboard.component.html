@@ -1,0 +1,34 @@
+<form>
+    <h2>Dashboard</h2>
+    <div style="display: flex; float:right ;">
+        <input class="searchBox"  (keyup)="applyFilter($event)"  placeholder="Search"><button > <img src="../../assets/SearchPNG.png"  style="width: 20px" (click)="applyFilter($event)"></button>
+    </div>
+
+<div class="table-container">
+    <table mat-table [dataSource]="dataSource" matSort>
+      <!-- Define columns for each property in your data -->
+      <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <ng-container *ngIf="column !== 'memberFormStatus'">
+            {{ column | titlecase }}
+          </ng-container>
+        </th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <a *ngIf="column === 'memberFormStatus'"  (click)="navigateTo('consentDetails')">{{ element[column] }}</a>
+          <ng-container *ngIf="column !== 'memberFormStatus'">{{ element[column] }}</ng-container>
+        </td>
+      </ng-container>
+  
+      <!-- Row displayed when there is no data in the table -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [attr.colspan]="displayedColumns.length">No data matching the filter "{{input}}"</td>
+      </tr>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div> 
+  <!-- Pagination -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons></mat-paginator>
+  
+</form>
