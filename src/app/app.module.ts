@@ -29,12 +29,16 @@ import { DateComponent } from '../lib/Inputs/date/date.component';
 // import { MatRadioModule } from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MedicalHistoryComponent } from '../lib/medical-history/medical-history.component';
 import { ConsentDetailsComponent } from '../lib/consent-details/consent-details.component';
 import { FileComponent } from '../lib/Inputs/file/file.component';
 import { MatStepperModule } from '@angular/material/stepper';
+import { DashboardComponent } from '../lib/dashboard/dashboard.component'; 
 
 @NgModule({
   declarations: [
@@ -53,7 +57,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     PrimiumCalculationComponent,
     MedicalHistoryComponent,
     ConsentDetailsComponent,
-    FileComponent
+    FileComponent,
+    DashboardComponent
   ],
   imports: [
     FormsModule,
@@ -76,7 +81,10 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatStepperModule ,
     MatCardModule,
     MatGridListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
