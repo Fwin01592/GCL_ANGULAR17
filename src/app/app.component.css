@@ -24,13 +24,3 @@
 h5{
     color: #e66f13;
 }
-::ng-deep.mat-horizontal-stepper-header-container{
-    width:calc(100% - 30rem)!important;
-    margin-left:calc(100% - 60rem)  !important;
-    /* margin-bottom: -4rem !important; */
-    height: 3rem !important;
-    font-size:small !important
-}
-::ng-deep .mat-step-text-label{
-    font-size:smaller !important
-}

@@ -13,15 +13,11 @@ h2{
   }
    
   .doc-column {
-    /* flex: 1; */
-    /* padding-right: 10px; Optional: Add some spacing between columns */
     margin-top: 0.9rem;
     margin-left: 2rem;  
 }
    
   .button-column {
-    /* flex-shrink: 0; /* Prevent checkbox column from shrinking 
-    width: 50px; Adjust the width as needed */
     padding-left: 4rem;
   }
   button{

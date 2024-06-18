@@ -1,0 +1,12 @@
+<mat-card class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div class="loginField">
+            <app-field name='usename' label="User Name" [required]=true placeholder="'Email/phone'" type="text" [formGroup]="formGroup" ></app-field>
+            <app-field name='password' label="Password" [required]=true  type="password" [formGroup]="formGroup" ></app-field>
+        </div>
+
+      <a mat-raised-button (click)="onSubmit()" class="loginButton"> Login</a>
+  
+    </form>
+  </mat-card>

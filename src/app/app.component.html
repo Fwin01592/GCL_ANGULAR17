@@ -3,31 +3,14 @@
     <span class="imageSpan">
       <div class="ifl-left-section">
         <img src="../assets/BOB-Logo.jpg" style="height: 5rem;">
-        <h5>WELCOME: RAJESH PATRA</h5>
+        <h5  *ngIf="checkURL()" >WELCOME: RAJESH PATRA</h5>
       </div>
     </span>
    </div>
   
    <div class="staticStepper">
-    <mat-horizontal-stepper [linear]="true" #stepper>
-      <mat-step>
-        <ng-template matStepLabel>Primium Calculation </ng-template>
-        <app-primium-calculation (formSubmit)="stepper.next()"></app-primium-calculation>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Medical History</ng-template>
-        <app-medical-history (formSubmit)="stepper.next()"></app-medical-history>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Consent</ng-template>
-        <app-consent-details (formSubmit)="stepper.next()"></app-consent-details>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel>Dashboard</ng-template>
-        <app-dashboard [data]="dashboardDetailsList"></app-dashboard>
-      </mat-step>
-    </mat-horizontal-stepper>
-   </div>
+     <router-outlet></router-outlet>
+  </div>
 </div>
 
 
