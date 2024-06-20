@@ -194,7 +194,7 @@ export class PrimiumCalculationComponent implements OnInit {
       {
         name: "applicationType",
         label: "Application Type",
-        value: "self",
+        value: "SELF",
         type: "text",
         readOnly: true,
       },

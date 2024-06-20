@@ -1,9 +1,12 @@
 ::ng-deep.mat-horizontal-stepper-header-container{
     width:calc(100% - 35rem)!important;
-    margin-left:calc(100% - 50rem)  !important;
+    /* margin-left:calc(100% - 50rem)  !important; */
     margin-bottom: -3rem !important;
     font-size:small !important
 }
 ::ng-deep .mat-step-text-label{
     font-size:smaller !important
+}
+::ng-deep .mat-horizontal-stepper-wrapper{
+    align-items: center;
 }
