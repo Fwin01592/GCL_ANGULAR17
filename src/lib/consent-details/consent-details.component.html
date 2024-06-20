@@ -3,10 +3,10 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
         <div class="flex-container">
           <div>
-            <app-field name="consentConfirmationby" label="Consent Confirmation by" require=true [formGroup]="formGroup" [value]="'uploadMembershipForm'" type="select" [options]="options"></app-field>
+            <app-field name="consentConfirmationby" label="Consent Confirmation by" [required]=true [formGroup]="formGroup" [value]="'uploadMembershipForm'" type="select" [options]="options"></app-field>
           </div>
           <div *ngIf="formGroup.value.consentConfirmationby =='uploadMembershipForm'" class="doc-column">
-            <app-field name="docUpload" type="file" require=true [formGroup]="formGroup"></app-field>
+            <app-field name="docUpload" type="file" [required]=true [formGroup]="formGroup"></app-field>
           </div>
           <div *ngIf="formGroup.value.consentConfirmationby =='smartLinkForOTP'" class="button-column">
             <button mat-raised-button (click)="onSubmit()"> Send Smart Link</button>

@@ -39,6 +39,8 @@ import { ConsentDetailsComponent } from '../lib/consent-details/consent-details.
 import { FileComponent } from '../lib/Inputs/file/file.component';
 import { MatStepperModule } from '@angular/material/stepper';
 import { DashboardComponent } from '../lib/dashboard/dashboard.component'; 
+import { NewApplicationComponent } from '../lib/new-application/new-application.component';
+import { LoginComponent } from '../lib/login/login.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { DashboardComponent } from '../lib/dashboard/dashboard.component';
     MedicalHistoryComponent,
     ConsentDetailsComponent,
     FileComponent,
-    DashboardComponent
+    DashboardComponent,
+    NewApplicationComponent,
+    LoginComponent
   ],
   imports: [
     FormsModule,

@@ -1,0 +1,52 @@
+h2{
+    color: #003869;
+    font-size: 1.2em;
+    font-family: "Whitney-Book", Arial;
+    text-transform: uppercase;
+    line-height: 1;
+}
+.loginButton{
+    background-color: #e66f13 !important; 
+    color: white !important;
+    /* margin-top: 1rem !important; */
+}
+
+.varifybutton{
+    width: 10rem;
+    margin-left: 1rem;
+}
+.loginField{
+    width: 50%;
+}
+
+::ng-deep .user-box input{
+    margin-bottom: 1rem !important;
+    padding: 6px !important;
+}
+::ng-deep .login-box {
+    margin-top: 0% !important;
+}
+
+.captcha-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 10px;
+    /* margin-left: 7rem   ; */
+}
+  
+#captchaCanvas {
+    border: 1px solid #000;
+}
+
+.captchaInput{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #e66f13;
+    /* margin-bottom: 3px; */
+    border: none;
+    border-bottom: 1px dashed #999;
+    outline: none;
+    background: transparent;
+}

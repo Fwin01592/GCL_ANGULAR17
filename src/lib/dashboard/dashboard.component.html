@@ -1,7 +1,10 @@
 <form>
-    <h2>Dashboard</h2>
+    <div style="display: flex; ">
+        <h2>Dashboard</h2>
+        <button  routerLink="/newApplication" mat-raised-button> New Application </button>
+    </div>
     <div style="display: flex; float:right ;">
-        <input class="searchBox"  (keyup)="applyFilter($event)"  placeholder="Search"><button > <img src="../../assets/SearchPNG.png"  style="width: 20px" (click)="applyFilter($event)"></button>
+        <input class="searchBox"  (keyup)="applyFilter($event)"  placeholder="Search"> <img src="../../assets/SearchPNG.png"  style="width: 20px" (click)="applyFilter($event)">
     </div>
 
 <div class="table-container">

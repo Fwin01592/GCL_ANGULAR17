@@ -22,7 +22,10 @@ h2{
     color: #e66f13;
 }
 button{
-    background: transparent;
+    color:white !important;
+    background: #e66f13 !important;
     outline: none;
     border: none;
+    margin-bottom: 2rem !important;
+    margin-left: 75%;
 }
