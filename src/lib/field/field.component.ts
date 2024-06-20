@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, FormControl, AbstractControl ,Validators} from 
 })
 export class FieldComponent implements OnInit, OnChanges {
   @Input() name: string = '';
+  @Input() placeholder: string = '';
   @Input() label: string = '';
   @Input() type: string = '';
   @Input() value: any;
@@ -114,19 +115,19 @@ export class FieldComponent implements OnInit, OnChanges {
 
   getPlaceholder(name: string): string {
     const field = this.schema.find(field => field.name === name);
-    return field?.placeholder || '';
+    return field?.placeholder || this.placeholder;
   }
 
   getOptions(name: string): any[] {
     const field = this.schema?.length?this.schema.find(field => field.name === name):this;
-    this.options= field?.options || [];
-    this.dependsOn=field && field.dependsOn ? field.dependsOn: [];
-    this.name=field && field.name ?field.name:'';
-    this.required=field?.required;
-    this.value=field?.value;
-    this.readOnly=field?.readOnly;
-    this.showAsToggle=field?.showAsToggle;
-    return field?.options || [];
+    this.options= field?.options || this.options;
+    this.dependsOn=field && field.dependsOn ? field.dependsOn: this.dependsOn;
+    this.name=field && field.name ? field.name:this.name;
+    this.required=field&&field.required ? field.required : this.required;
+    this.value=field&&field.value ? field.value : this.value;
+    this.readOnly=field&&field.readOnly ? field.readOnly : this.readOnly;
+    this.showAsToggle=field&&field.showAsToggle ? field.showAsToggle : this.showAsToggle;
+    return field?.options || this.options;
   }
 
   // updateContext(schema: any[]): void {

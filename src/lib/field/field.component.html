@@ -1,166 +1,161 @@
 <div *ngIf="schema.length">
   <mat-grid-list cols="2" rowHeight="5rem">
-      <mat-grid-tile *ngFor="let field of schema" [ngSwitch]="field.type">
-          <div >
-            <label [ngClass]="{'required':field.required == true}">{{ field.label }} </label>
-          </div>
-          <div>
-            <ng-container *ngSwitchCase="'text'">
-              <ng-container *ngTemplateOutlet="textTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'checkbox'">
-              <ng-container *ngTemplateOutlet="checkboxTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'textarea'">
-              <ng-container *ngTemplateOutlet="textareaTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'select'">
-              <ng-container *ngTemplateOutlet="selectTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'password'">
-              <ng-container *ngTemplateOutlet="passwordTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'email'">
-              <ng-container *ngTemplateOutlet="emailTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'url'">
-              <ng-container *ngTemplateOutlet="urlTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'phone'">
-              <ng-container *ngTemplateOutlet="phoneTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'number'">
-              <ng-container *ngTemplateOutlet="numberTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'date'">
-              <ng-container *ngTemplateOutlet="dateTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'radio'">
-              <ng-container *ngTemplateOutlet="radioTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchCase="'button'">
-              <ng-container *ngTemplateOutlet="buttonTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
+    <mat-grid-tile *ngFor="let field of schema" [ngSwitch]="field.type">
+        <div >
+          <label [ngClass]="{'required':field.required == true}">{{ field.label }} </label>
+        </div>
+        <div>
+          <ng-container *ngSwitchCase="'text'">
+            <ng-container *ngTemplateOutlet="textTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'checkbox'">
+            <ng-container *ngTemplateOutlet="checkboxTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'textarea'">
+            <ng-container *ngTemplateOutlet="textareaTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'select'">
+            <ng-container *ngTemplateOutlet="selectTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'password'">
+            <ng-container *ngTemplateOutlet="passwordTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'email'">
+            <ng-container *ngTemplateOutlet="emailTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'url'">
+            <ng-container *ngTemplateOutlet="urlTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'phone'">
+            <ng-container *ngTemplateOutlet="phoneTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'number'">
+            <ng-container *ngTemplateOutlet="numberTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'date'">
+            <ng-container *ngTemplateOutlet="dateTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'radio'">
+            <ng-container *ngTemplateOutlet="radioTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'button'">
+            <ng-container *ngTemplateOutlet="buttonTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
 
-            <ng-container *ngSwitchCase="'file'">
-              <ng-container *ngTemplateOutlet="fileTemplate; context: getContext(field.name)"></ng-container>
-            </ng-container>
-            <ng-container *ngSwitchDefault>
-              <p>Unsupported input type: {{ field.type }}</p>
-            </ng-container>
-          </div>
-          <div *ngIf="formGroup.get(field.name)?.touched && formGroup.get(field.name)?.invalid" > 
-            <small class="mat-grid-tile-footer">{{ getErrorMessage(field.name)}}</small>
-          </div>
-        <!-- </mat-grid-list> -->
-      </mat-grid-tile>
-    </mat-grid-list>
+          <ng-container *ngSwitchCase="'file'">
+            <ng-container *ngTemplateOutlet="fileTemplate; context: getContext(field.name)"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            <p>Unsupported input type: {{ field.type }}</p>
+          </ng-container>
+        </div>
+        <div *ngIf="formGroup.get(field.name)?.touched && formGroup.get(field.name)?.invalid" > 
+          <small class="mat-grid-tile-footer">{{ getErrorMessage(field.name)}}</small>
+        </div>
+      <!-- </mat-grid-list> -->
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div *ngIf="!schema.length" [ngSwitch]="type">
+  <div *ngIf="label">
+    <label [ngClass]="{'required':required == true}">{{ label }}</label>
   </div>
-  
-  <div *ngIf="!schema.length" [ngSwitch]="type">
-    <div *ngIf="label">
-      <label [ngClass]="{'required':required == true}">{{ label }}</label>
-    </div>
-    <div>
-      <ng-container *ngSwitchCase="'text'">
-        <ng-container *ngTemplateOutlet="textTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'checkbox'">
-        <ng-container *ngTemplateOutlet="checkboxTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'password'">
-        <ng-container *ngTemplateOutlet="passwordTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'textarea'">
-        <ng-container *ngTemplateOutlet="textareaTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'select'">
-        <ng-container *ngTemplateOutlet="selectTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'email'">
-        <ng-container *ngTemplateOutlet="emailTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'url'">
-        <ng-container *ngTemplateOutlet="urlTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'phone'">
-        <ng-container *ngTemplateOutlet="phoneTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'number'">
-        <ng-container *ngTemplateOutlet="numberTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'date'">
-        <ng-container *ngTemplateOutlet="dateTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'radio'">
-        <ng-container *ngTemplateOutlet="radioTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'button'">
-        <ng-container *ngTemplateOutlet="buttonTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchCase="'file'">
-        <ng-container *ngTemplateOutlet="fileTemplate; context: getContext(name)"></ng-container>
-      </ng-container>
-      <ng-container *ngSwitchDefault>
-        <p>Unsupported input type: {{ type }}</p>
-      </ng-container>
-    </div>
-    <div *ngIf="formGroup.get(name)?.touched && formGroup.get(name)?.invalid" > 
-      <small class="mat-grid-tile-footer">{{ getErrorMessage(name)}}</small>
-    </div>
+  <div>
+    <ng-container *ngSwitchCase="'text'">
+      <ng-container *ngTemplateOutlet="textTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'checkbox'">
+      <ng-container *ngTemplateOutlet="checkboxTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'password'">
+      <ng-container *ngTemplateOutlet="passwordTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'textarea'">
+      <ng-container *ngTemplateOutlet="textareaTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'select'">
+      <ng-container *ngTemplateOutlet="selectTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'email'">
+      <ng-container *ngTemplateOutlet="emailTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'url'">
+      <ng-container *ngTemplateOutlet="urlTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'phone'">
+      <ng-container *ngTemplateOutlet="phoneTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'number'">
+      <ng-container *ngTemplateOutlet="numberTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'date'">
+      <ng-container *ngTemplateOutlet="dateTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'radio'">
+      <ng-container *ngTemplateOutlet="radioTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'button'">
+      <ng-container *ngTemplateOutlet="buttonTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchCase="'file'">
+      <ng-container *ngTemplateOutlet="fileTemplate; context: getContext(name)"></ng-container>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+      <p>Unsupported input type: {{ type }}</p>
+    </ng-container>
   </div>
-  <ng-template #textTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-text  class="user-box" [data]="value" [placeholder]="placeholder" [required]="required" type="text" [formControl]="formControl" [readOnly]="readOnly"></app-text>
-  </ng-template>
-  
-  <ng-template #textareaTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-text-area class="user-box" [data]="value" [placeholder]="placeholder" [required]="required" [formControl]="formControl" [readOnly]="readOnly"></app-text-area>
-  </ng-template>
+  <div *ngIf="formGroup.get(name)?.touched && formGroup.get(name)?.invalid" > 
+    <small class="mat-grid-tile-footer">{{ getErrorMessage(name)}}</small>
+  </div>
+</div>
+<ng-template #textTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-text  class="user-box" [data]="value" [placeholder]="placeholder" [required]="required" type="text" [formControl]="formControl" [readOnly]="readOnly"></app-text>
+</ng-template>
 
- 
-  
-  <ng-template #checkboxTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-checkbox  class="user-box" [formControl]="formControl" [required]="required" [readOnly]="readOnly" [showAsToggle]="showAsToggle" [value]="value"></app-checkbox>
-  </ng-template>
-  
-  <ng-template #passwordTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-password  class="user-box" [formControl]="formControl" [required]="required" [readOnly]="readOnly"></app-password>
-  </ng-template>
-  
-  <ng-template #emailTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-email [required]="required" class="user-box" [formControl]="formControl" [placeholder]="placeholder" [required]="required" [name]="name" [readOnly]="readOnly"></app-email>
-  </ng-template>
-  
-  <ng-template #urlTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-  </ng-template>
-  
-  <ng-template #phoneTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-phone [required]="required" class="user-box" [formControl]="formControl" [placeholder]="placeholder" [required]="required" [readOnly]="readOnly"></app-phone>
-  </ng-template>
-  
-  <ng-template #numberTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-integer [required]="required" class="user-box" [formControl]="formControl" [readOnly]="readOnly"></app-integer>
-  </ng-template>
-  
-  <ng-template #radioTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-radio [required]="required"class="radio" [formControl]="formControl" [options]="options" [readOnly]="readOnly"></app-radio>
-  </ng-template>
-  
-  <ng-template #buttonTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-     <!-- <app-button [formControl]="formControl"></app-button>  -->
-  </ng-template>
-  
-  <ng-template #dateTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-date [required]="required" class="user-box" [formControl]="formControl" [readOnly]="readOnly"></app-date>
-  </ng-template>
+<ng-template #textareaTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-text-area class="user-box" [data]="value" [placeholder]="placeholder" [required]="required" [formControl]="formControl" [readOnly]="readOnly"></app-text-area>
+</ng-template>
 
-  <ng-template #fileTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
-    <app-file [required]="required" class="user-box" [formControl]="formControl" [value]="value" [name]="name"></app-file>
-  </ng-template>
+<ng-template #checkboxTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-checkbox  class="user-box" [formControl]="formControl" [required]="required" [readOnly]="readOnly" [showAsToggle]="showAsToggle" [value]="value"></app-checkbox>
+</ng-template>
 
-  <ng-template #selectTemplate let-value="value" let-required="required" let-options="options" let-formControl="formControl">
-    <app-picklist class="user-box" [options]="options" [formControl]="formControl" [dependsOn]="dependsOn" [name]="name" [required]="required" [readOnly]="readOnly" [value]="value"></app-picklist>
-  </ng-template>
+<ng-template #passwordTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-password  class="user-box" [formControl]="formControl" [required]="required" [readOnly]="readOnly"></app-password>
+</ng-template>
 
-  
-  
+<ng-template #emailTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-email [required]="required" class="user-box" [formControl]="formControl" [placeholder]="placeholder" [required]="required" [name]="name" [readOnly]="readOnly"></app-email>
+</ng-template>
+
+<ng-template #urlTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+</ng-template>
+
+<ng-template #phoneTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-phone [required]="required" class="user-box" [formControl]="formControl" [placeholder]="placeholder" [required]="required" [readOnly]="readOnly"></app-phone>
+</ng-template>
+
+<ng-template #numberTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-integer [required]="required" class="user-box" [formControl]="formControl" [readOnly]="readOnly"></app-integer>
+</ng-template>
+
+<ng-template #radioTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-radio [required]="required"class="radio" [formControl]="formControl" [options]="options" [readOnly]="readOnly"></app-radio>
+</ng-template>
+
+<ng-template #buttonTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+    <!-- <app-button [formControl]="formControl"></app-button>  -->
+</ng-template>
+
+<ng-template #dateTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-date [required]="required" class="user-box" [formControl]="formControl" [readOnly]="readOnly"></app-date>
+</ng-template>
+
+<ng-template #fileTemplate let-value="value" let-placeholder="placeholder" let-required="required" let-formControl="formControl">
+  <app-file [required]="required" class="user-box" [formControl]="formControl" [value]="value" [name]="name"></app-file>
+</ng-template>
+
+<ng-template #selectTemplate let-value="value" let-required="required" let-options="options" let-formControl="formControl">
+  <app-picklist class="user-box" [options]="options" [formControl]="formControl" [dependsOn]="dependsOn" [name]="name" [required]="required" [readOnly]="readOnly" [value]="value"></app-picklist>
+</ng-template>

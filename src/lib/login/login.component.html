@@ -1,11 +1,20 @@
 <mat-card class="login-box">
     <h2>Login</h2>
     <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-        <div class="loginField">
-            <app-field name='usename' label="User Name" [required]=true placeholder="'Email/phone'" type="text" [formGroup]="formGroup" ></app-field>
-            <app-field name='password' label="Password" [required]=true  type="password" [formGroup]="formGroup" ></app-field>
+        <div >
+            <div class="loginField">
+                <app-field name='usename' label="User Name" [required]=true type="text" [formGroup]="formGroup" ></app-field>
+                <app-field name='password' label="Password" [required]=true  type="password" [formGroup]="formGroup" ></app-field>
+            </div>
+            <div class="captcha-container ">
+                <div>
+                    <canvas id="captchaCanvas" width="200" height="50"></canvas>
+                    <img  style="width: 60px" src="../../assets/refresh.jpg" (click)="generateNewCaptcha()">
+                </div>
+                    <app-field name='captcha' class="loginField" [required]=true  type="text" [formGroup]="formGroup" placeholder="Enter captcha"></app-field>
+                    <!-- <button  mat-raised-button   class="loginButton varifybutton" (click)="verifyCaptcha()">Verify CAPTCHA</button> -->
+            </div>
         </div>
-
       <a mat-raised-button (click)="onSubmit()" class="loginButton"> Login</a>
   
     </form>
